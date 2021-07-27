@@ -5,6 +5,9 @@ from .forms import NewUserForm
 from django.contrib.auth import login
 from django.contrib import messages
 
+def homepage(request):
+    return render(request, "h")
+
 def register_request(request):
 
     if request.method == 'POST':
@@ -18,4 +21,3 @@ def register_request(request):
             messages.error(request, "Deu erro, baby!")
     form = NewUserForm()
     return render(request=request, template_name="main/register.html", context={"register_form":form})
-    
