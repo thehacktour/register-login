@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fd9sr0s#rspo8@wu81hxy)8an8kh6hu@(tlrnv-yzr(re4ot4l'
+SECRET_KEY = 'django-insecure-aw-p8qz5z9@d&+lee443-8bie(zc4x6&6l8hz5sxkv7@r%cdaj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,20 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-]
-
-SITE_ID = 1
-LOGIN_REDIRECT_URL = "/"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    
+    'app.users',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +53,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.request',
             ],
         },
     },
